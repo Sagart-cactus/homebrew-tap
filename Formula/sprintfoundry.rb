@@ -1,9 +1,9 @@
 class Sprintfoundry < Formula
   desc "Multi-agent orchestration for AI-powered software development"
   homepage "https://github.com/Sagart-cactus/SprintFoundry"
-  url "https://registry.npmjs.org/sprintfoundry/-/sprintfoundry-0.2.0.tgz"
-  sha256 "e1553cf5785514341ff5e4dbf0491f6a7ef21b6b07ab87e5ecd42c429fdbd0f7"
-  license "MIT"
+  url "https://registry.npmjs.org/sprintfoundry/-/sprintfoundry-0.5.0.tgz"
+  sha256 "69601d51871c12e0370b76fe49a644d40b0593c420624da17d606c08f0df3039"
+  license "Apache-2.0"
 
   depends_on "node"
 
@@ -13,6 +13,6 @@ class Sprintfoundry < Formula
   end
 
   test do
-    assert_match "0.2.0", shell_output("#{bin}/sprintfoundry --version")
+    assert_match "0.5.0", shell_output("#{bin}/sprintfoundry --version")
   end
 end
