@@ -1,19 +1,15 @@
 class Sprintfoundry < Formula
   desc "Multi-agent orchestration for AI-powered software development"
   homepage "https://github.com/Sagart-cactus/SprintFoundry"
-  url "https://github.com/Sagart-cactus/SprintFoundry/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "0327839ac0047cbeb2f75b2b1dbb20e0c1acd305044625ed0b5bab4f27559efd"
+  url "https://registry.npmjs.org/sprintfoundry/-/sprintfoundry-0.6.0.tgz"
+  sha256 "64590bc6503fbad3f44c39f465ffecc6de749fef4c09a62ebaf817d0cf758560"
   license "Apache-2.0"
 
   depends_on "node"
 
   def install
-    system "npm", "install"
-    system "npm", "run", "build"
-    system "npm", "prune", "--omit=dev"
-    libexec.install "dist", "monitor", "config", "src", "plugins", "node_modules", "package.json"
-    (bin/"sprintfoundry").write_env_script libexec/"dist/index.js", {}
-    chmod 0755, libexec/"dist/index.js"
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec/"bin/sprintfoundry"
   end
 
   test do
